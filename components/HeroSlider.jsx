@@ -1,48 +1,71 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css/pagination";
 import { motion } from "framer-motion";
 
 export default function HeroSlider() {
   return (
-    <Swiper
-      modules={[Autoplay, Pagination]}
-      autoplay={{ delay: 4000 }}
-      pagination={{ clickable: true }}
-      loop
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center relative px-4"
+      style={{ backgroundImage: `url(/hero.webp)` }}
     >
-      {[1, 2, 3].map((i) => (
-        <SwiperSlide key={i}>
-          <div className="h-screen flex items-center bg-cover bg-center relative"
-               style={{ backgroundImage: `url(/hero.webp)` }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
 
-            <div className="absolute inset-0 bg-black/50" />
+      {/* Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 max-w-4xl mx-auto text-center text-white"
+      >
+        {/* Heading */}
+        <h1
+          className="
+          font-bold 
+          text-2xl 
+          sm:text-3xl 
+          md:text-4xl 
+          lg:text-5xl 
+          xl:text-6xl
+          leading-tight
+        "
+        >
+          WE BRING <span className="text-[var(--color-primary)]">DESIGN</span>{" "}
+          TOGETHER WITH <span className="">TECHNOLOGY</span>
+        </h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10 max-w-3xl mx-auto text-center text-white"
-            >
-              <h1 className="text-5xl font-bold">
-                Premium Printing Solutions
-              </h1>
+        {/* Subtext */}
+        <p
+          className="
+          mt-4 
+          text-base 
+          sm:text-lg 
+          md:text-xl 
+          lg:text-2xl
+          text-gray-200
+        "
+        >
+          A quality printing and promotional product company.
+        </p>
 
-              <p className="mt-4 text-lg">
-                High quality designs & fast delivery
-              </p>
-
-              <button className="mt-6 bg-primary px-6 py-3 rounded hover:scale-105 transition">
-                Get Started
-              </button>
-            </motion.div>
-
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+        {/* Buttons */}
+        <div
+          className="
+          mt-6 
+          flex 
+          justify-center 
+          items-center 
+          gap-4
+        "
+        >
+          <button className="btn btn-primary w-full sm:w-auto">
+            Learn More
+          </button>
+          <button className="btn btn-danger w-full sm:w-auto">
+            How it works
+          </button>
+        </div>
+      </motion.div>
+    </div>
   );
 }
