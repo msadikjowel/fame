@@ -1,4 +1,7 @@
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
+import Topbar from "../components/Topbar.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 export const metadata = {
   title: "Fame",
@@ -9,8 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-       
-        {children}</body>
+        <Topbar />
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

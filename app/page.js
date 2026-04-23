@@ -10,11 +10,11 @@ import Topbar from "../components/Topbar";
 export default function Home() {
   return (
     <>
-      <Topbar />
-      <Navbar />
+      {/* <Topbar />
+      <Navbar /> */}
       <HeroSlider />
       <Services />
-      <ParallaxSection />
+      {/* <ParallaxSection /> */}
       <Stats />
       <TestimonialsSlider />
       <Footer />

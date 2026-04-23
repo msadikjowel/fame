@@ -13,7 +13,7 @@ export default function TopBar() {
   return (
     <div className="w-full bg-[var(--color-primary)] text-white
                     text-[13px] sm:text-[14px]
-                    h-[34px] sm:h-[38px] lg:h-[42px]">
+                    h-[42px]">
 
       {/* INNER CONTAINER */}
       <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-3">
